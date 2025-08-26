@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ledgeit-signed-homepage": {
+    "personal-website": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -33,7 +33,8 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "outputPath": "build"
           },
           "configurations": {
             "production": {
@@ -57,16 +58,16 @@
               "sourceMap": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "production",
         },
         "serve": {
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ledgeit-signed-homepage:build:production"
+              "buildTarget": "personal-website:build:production"
             },
             "development": {
-              "buildTarget": "ledgeit-signed-homepage:build:development"
+              "buildTarget": "personal-website:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -89,6 +90,9 @@
               "src/styles.scss"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
