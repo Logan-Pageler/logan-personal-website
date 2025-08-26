@@ -1,0 +1,67 @@
+<section class="mission-wrapper" aria-labelledby="mission-title">
+  <div class="bg-hex" aria-hidden="true">
+    <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <pattern id="hexGrid" width="60" height="52" patternUnits="userSpaceOnUse"
+                 patternTransform="translate(0,0)">
+          <!-- hex outline -->
+          <polygon points="30,2 58,16 58,44 30,58 2,44 2,16" class="hex-stroke"/>
+        </pattern>
+
+        <!-- soft vignette -->
+        <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+          <stop offset="0%" stop-color="rgba(0,0,0,0)"/>
+          <stop offset="100%" stop-color="rgba(0,0,0,0.35)"/>
+        </radialGradient>
+      </defs>
+
+      <rect width="100%" height="100%" fill="url(#hexGrid)">
+        <animate attributeName="x" from="0" to="60" dur="18s" repeatCount="indefinite"/>
+      </rect>
+
+      <rect width="100%" height="100%" fill="url(#vignette)"/>
+    </svg>
+  </div>
+
+  <div class="content">
+    <article class="card" role="region" aria-label="Mission statement">
+      <h1 id="mission-title" class="title">
+        <span>Mission Statement:</span>
+      </h1>
+
+      <p class="blurb">
+        Hi, I'm Logan— a full-stack developer who blends curiosity, clarity, and reliability to build software people actually enjoy using.
+      </p>
+
+      <ul class="highlights" aria-label="Principles">
+        <li>
+          <div class="dot"></div>
+          <div>
+            <h3>Breadth + depth</h3>
+            <p>Well-rounded full-stack work, comfortable from data models and APIs to polished UI.</p>
+          </div>
+        </li>
+        <li>
+          <div class="dot"></div>
+          <div>
+            <h3>Emerging tech, thoughtfully applied</h3>
+            <p>I learn quickly and ship responsibly—no hype without maintainability.</p>
+          </div>
+        </li>
+        <li>
+          <div class="dot"></div>
+          <div>
+            <h3>Track record</h3>
+            <p>Built and deployed a scalable simulation platform with extensible modules.</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="cta-row">
+        <a class="btn primary" href="#work" aria-label="See selected work">See Work</a>
+        <a class="btn ghost" href="#contact" aria-label="Get in touch">Get in Touch</a>
+      </div>
+    </article>
+  </div>
+</section>
+

@@ -2,15 +2,17 @@
     position: relative;
 }
 
-app-circuit-background {
-    position: absolute;
-    z-index: -10;
-    width: 100%;
-}
 
 app-slogan {
     position: absolute;
     z-index: 0;
     width: 100%;
     padding-top: 15vh;
+}
+
+.mission-statement-area {
+    min-height: 100%;
+    top: 85%;
+    width: 100%;
+    position: absolute;
 }
