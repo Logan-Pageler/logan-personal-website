@@ -34,7 +34,7 @@
             "ssr": {
               "entry": "src/server.ts"
             },
-            "outputPath": "build"
+            "outputPath": "dist"
           },
           "configurations": {
             "production": {
