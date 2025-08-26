@@ -1,0 +1,32 @@
+.slogan-container {
+  font-size: 3rem;
+  font-weight: 500;
+  color: #f4f4f6;
+  text-align: center;
+  padding: 2rem;
+  font-family: monospace;
+  vertical-align: top;
+  z-index: 0;
+  padding-top: 7rem;
+  margin: 0 auto;
+  max-width: 23ch;
+}
+
+.buzz-word-wrapper {
+  display: inline-block;
+  width: 11ch; /* Reserve space for longest word (e.g., 'Composable') */
+  text-align: left;
+  white-space: nowrap;
+}
+
+.buzz-word::after {
+  content: '|';
+  animation: blink 1s infinite;
+  margin-left: 0;
+  vertical-align: baseline;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

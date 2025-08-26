@@ -1,0 +1,72 @@
+:host {
+  display: block;
+}
+
+$bg-color: #1C1C1E;
+$text-color: #F4F4F6;
+$brand-color: #7C4DFF;
+$link-color: #D1D3D4;
+$hover-color: #8A2BE2;
+$transition-speed: 0.4s;
+$transition-ease: ease-in-out;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 80%;
+  margin: 1rem 10%;
+  border-radius: 1rem;
+  background-color: $bg-color;
+  color: $text-color;
+  font-family: "Segoe UI", sans-serif;
+  z-index: 1000;
+  transition: all $transition-speed $transition-ease;
+}
+
+.navbar.scrolled {
+  max-width: 100% !important;
+  margin: 0 0 !important;
+  border-radius: 0 !important;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.padding-box {
+  margin: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 5rem;
+}
+
+.logo {
+  height: 32px;
+  margin-right: 10px;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $brand-color;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: $link-color;
+  transition: color $transition-speed $transition-ease;
+
+  &:hover {
+    color: $hover-color;
+  }
+}

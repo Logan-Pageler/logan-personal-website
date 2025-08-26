@@ -1,0 +1,15 @@
+.slogan-area {
+    position: relative;
+}
+
+app-circuit-background {
+    position: absolute;
+    z-index: -10;
+    width: 100%;
+}
+
+app-slogan {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+}
