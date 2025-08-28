@@ -36,6 +36,20 @@ ng build
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
+## Deploying
+
+Currently the website is setup to deploy to my github pages. I can do this with
+```sh
+ng deploy --repo=https://github.com/Logan-Pageler/Logan-Pageler.github.io.git
+```
+
+## Linting
+
+I use ESlint for linting. To run it do the following:
+```sh
+ng lint
+```
+
 ## Running unit tests
 
 To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:

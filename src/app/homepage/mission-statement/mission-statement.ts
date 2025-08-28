@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'mission-statement',
+  selector: 'app-mission-statement',
   templateUrl: './mission-statement.html',
   styleUrls: ['./mission-statement.scss']
 })
