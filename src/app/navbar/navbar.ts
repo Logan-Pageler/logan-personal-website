@@ -14,7 +14,14 @@ export class Navbar {
   //whether the navbar should be animated
   @Input() animated: boolean = false;
   // Whether the screen is scrolled
-  scrolled = !this.animated;
+  scrolled = false;
+
+  /**
+   * Setup the scrolled on init
+   */
+  ngOnInit() {
+    this.scrolled = !this.animated;
+  }
 
   /**
    * As the window scrolls expand the navbar if animated
