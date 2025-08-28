@@ -1,4 +1,4 @@
-import { Component, HostListener, Input } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 
 /**
  * Component to represent the navbar at the top of the screen.
@@ -10,7 +10,7 @@ import { Component, HostListener, Input } from '@angular/core';
   templateUrl: './navbar.html',
   styleUrls: ['./navbar.scss']
 })
-export class Navbar {
+export class Navbar implements OnInit{
   //whether the navbar should be animated
   @Input() animated: boolean = false;
   // Whether the screen is scrolled
