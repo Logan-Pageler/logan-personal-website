@@ -1,0 +1,34 @@
+
+<div class="grid" role="list">
+@for (p of projects; track p.slug) {
+    <a
+    class="card"
+    href="/projects/{{p.slug}}"
+    role="listitem"
+    [attr.aria-label]="p.title"
+    >
+    <figure class="thumb" aria-hidden="true">
+        <img
+        [src]="p.imageUrl"
+        [alt]="p.imageAlt"
+        loading="lazy"
+        decoding="async"
+        [style.object-fit]="p.objectFit"
+        />
+    </figure>
+
+    <div class="meta">
+        <h2 class="title">{{ p.title }}</h2>
+        <p class="blurb">{{ p.blurb }}</p>
+        @if (p.tags?.length) {
+            <ul class="tags" aria-label="Technologies">
+                @for (t of p.tags; track t) {
+                    <li >{{ t }}</li>
+                }
+            </ul>
+        }
+    </div>
+    </a>
+}
+</div>
+
