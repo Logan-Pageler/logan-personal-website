@@ -4,10 +4,51 @@
       <img src="favicon.ico" alt="Ledgeit Logo" class="logo" />
       <span class="brand-name">Logan Pageler</span>
     </div>
-    <ul class="navbar-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="projects">Projects</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+    <!-- Mobile menu --> 
+    <button
+      #menuBtn
+      class="menu-btn"
+      type="button"
+      aria-label="Menu"
+      aria-haspopup="menu"
+      aria-controls="mobile-menu"
+      [attr.aria-expanded]="isOpen"
+      (click)="toggleMenu()">
+      <svg viewBox="0 0 24 24" class="hamburger" [class.open]="isOpen" aria-hidden="true">
+        <line x1="0" y1="6"  x2="20" y2="6"></line>
+        <line x1="0" y1="12" x2="20" y2="12"></line>
+        <line x1="0" y1="18" x2="20" y2="18"></line>
+      </svg>
+    </button>
+    @if (isOpen) {
+      <nav
+        #menuPanel
+        id="mobile-menu"
+        class="dropdown"
+        role="menu"
+        aria-label="Primary (mobile)">
+        @for (l of links; track $index) {
+          <a
+            [href]="l.path"
+            routerLinkActive="active"
+            (click)="closeMenu()"
+            >{{ l.label }}
+          </a>
+        }
+      </nav>
+      <button class="backdrop" (click)="closeMenu()" aria-label="Close menu"></button>
+    }
+
+    <!-- Inline desktop nav -->
+    <nav id="primary-nav" class="navbar-links" aria-label="Primary">
+      @for (l of links; track $index) {
+        <li><a 
+        [href]="l.path"
+        routerLinkActive="active"
+        >
+          {{ l.label }}
+        </a></li>
+      }
+    </nav>
   </div>
 </nav>

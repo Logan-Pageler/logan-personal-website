@@ -70,3 +70,60 @@ $transition-ease: ease-in-out;
     color: $hover-color;
   }
 }
+
+/* Hamburger + dropdown (mobile) */
+.menu-btn {
+  border: 0; background: transparent; color: var(--ink); cursor: pointer; padding: .35rem; border-radius: .5rem;
+  display: none; /* shown on narrow screens */
+  &:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; }
+  .hamburger { width: 28px; height: 28px; stroke: currentColor; stroke-width: 2; stroke-linecap: round; transition: transform 140ms ease; }
+  .hamburger.open line:nth-child(1){ transform: translateY(6px) rotate(45deg); transform-origin: 12px 12px; }
+  .hamburger.open line:nth-child(2){ opacity: 0; }
+  .hamburger.open line:nth-child(3){ transform: translateY(-6px) rotate(-45deg); transform-origin: 12px 12px; }
+}
+
+.dropdown {
+  position: absolute; right: 0; top: calc(100% + 10px);
+  min-width: 200px; background: #21172f; color: var(--ink);
+  border: 1px solid var(--stroke); border-radius: 12px; padding: .4rem;
+  box-shadow: 0 12px 24px rgba(0,0,0,.35);
+  transform-origin: top right;
+  animation: pop .12s ease both;
+  z-index: 1000;  /* above navbar */
+
+  /* caret */
+  &::before {
+    content: ""; position: absolute; top: -7px; right: 14px; width: 12px; height: 12px;
+    background: #21172f; border-left: 1px solid var(--stroke); border-top: 1px solid var(--stroke);
+    transform: rotate(45deg);
+  }
+
+  a {
+    line-height: 3rem;
+    display: block; text-decoration: none; color: var(--ink);
+    padding: .55rem .65rem; border-radius: .5rem;
+    &:hover, &.active { background: rgba(255,255,255,.06); }
+    &:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; }
+  }
+}
+
+.backdrop {
+  position: fixed; inset: 0; border: 0; padding: 0; margin: 0;
+  background: transparent; z-index: 500; /* below dropdown, above page */
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: translateY(-6px) scale(.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .navbar-links { display: none; }     /* hide desktop links */
+  .menu-btn { display: inline-flex; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dropdown { animation: none !important; }
+  .hamburger.open line { transition: none !important; }
+}
