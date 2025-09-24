@@ -26,7 +26,7 @@ export class Navbar implements OnInit{
   links = [
     { label: 'Home', path: '' },
     { label: 'Projects', path: 'projects' },
-    { label: 'Contact', path: 'contact' },
+    { label: 'Contact', path: 'mailto:me@loganpageler.com' },
   ];
 
   /**
