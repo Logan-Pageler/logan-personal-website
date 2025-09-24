@@ -40,7 +40,7 @@ This will compile your project and store the build artifacts in the `dist/` dire
 
 Currently the website is setup to deploy to my github pages. I can do this with
 ```sh
-ng deploy --repo=https://github.com/Logan-Pageler/Logan-Pageler.github.io.git
+ng deploy
 ```
 
 ## Linting

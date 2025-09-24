@@ -92,7 +92,11 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "repo": "https://github.com/Logan-Pageler/Logan-Pageler.github.io.git",
+            "cname": "loganpageler.com"
+          }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
